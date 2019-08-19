@@ -173,7 +173,7 @@ SyntaxError: Unexpected token import
 
 
 Set up your jest config to map salesforce to a dummy component stub
-##### package.json
+##### `package.json`
 ```
 "jest": {
   "moduleNameMapper": {
@@ -182,7 +182,27 @@ Set up your jest config to map salesforce to a dummy component stub
 },
 ```
 
-##### __mocks__/EmptyComponentMock.js
+##### `__mocks__/EmptyComponentMock.js`
 ```
 module.exports = () => {};
+```
+
+
+## Misc
+### Mocking Reselect
+If you have problem using reselect resultfunc and just want to mock createSelector, here is a way to mock it.
+
+```
+global.ReselectMock = jest.mock('reselect', () => ({
+  createSelector: (...params) => params[params.length - 1],
+}));
+```
+
+You can also move it into the global jest
+```
+"jest": {
+  ...
+  "setupFiles": ["<rootDir>/test/setupGlobalJest.js"]
+  ...
+}
 ```

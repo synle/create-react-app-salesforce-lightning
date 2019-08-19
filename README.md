@@ -172,6 +172,8 @@ SyntaxError: Unexpected token import
 ```
 
 
+#### Option 1: map salesforce lightning to an empty component
+
 Set up your jest config to map salesforce to a dummy component stub
 ##### `package.json`
 ```
@@ -187,6 +189,7 @@ Set up your jest config to map salesforce to a dummy component stub
 module.exports = () => {};
 ```
 
+#### Option 2: using jest `--transformIgnorePatterns`
 
 ## Misc
 ### Mocking Reselect

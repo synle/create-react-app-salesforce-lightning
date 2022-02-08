@@ -6,10 +6,10 @@ import * as serviceWorker from './serviceWorker';
 import IconSettings from '@salesforce/design-system-react/components/icon-settings';
 
 ReactDOM.render(
-  <IconSettings iconPath="/assets/icons">
+  <IconSettings iconPath='/assets/icons'>
     <App />
   </IconSettings>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

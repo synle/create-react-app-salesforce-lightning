@@ -12,9 +12,10 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
-    "format": "npx prettier --config ./.prettierrc --write **/*.{ts,tsx,js,jsx,scss,yml,html} *.{json,MD}",
+    "format": "oxfmt --write .",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject --env=jsdom"
+    "eject": "react-scripts eject --env=jsdom",
+    "format:check": "oxfmt --check ."
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -26,6 +27,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "oxfmt": "^0.61.0",
     "react-app-rewired": "^2.1.11"
   }
 }

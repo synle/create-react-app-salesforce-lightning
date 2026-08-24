@@ -15,7 +15,8 @@
     "format": "oxfmt --write .",
     "test": "react-app-rewired test",
     "eject": "react-scripts eject --env=jsdom",
-    "format:check": "oxfmt --check ."
+    "format:check": "oxfmt --check .",
+    "lint": "npx oxlint ."
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -8,10 +8,6 @@ Bootstrap React App with create-react-app 2x and Salesforce Lightning Design Sys
 - https://react.lightningdesignsystem.com/
 - https://www.lightningdesignsystem.com/
 
-## Sample Repo
-
-Follow this repo at https://github.com/synle/create-react-app-salesforce-lightning to view a fully functional create-react-app 2x with Salesforce Lightning Design System
-
 ## Requirements
 
 Make sure you have node js version >=8. You can have it installed using `nvm`, `n` or just binary from your OS of choice
@@ -43,7 +39,7 @@ More on that here: https://github.com/timarney/react-app-rewired
 npm install react-app-rewired --save-dev
 ```
 
-Then changes the package.json scripts to use `react-app-rewired`
+Then change the package.json scripts to use `react-app-rewired`
 
 ```
 /* package.json */
@@ -158,29 +154,11 @@ Visit this link to start using Salesforce Lightning Design Components https://re
 
 ### Testing
 
-If your unit tests with jest has some errors with @salesforce not being properly compiled. At the moment, I found a workwaround which is simply remap the salesforce module to an empty React Component. It is not ideal, but I can't find a reliable way to tell `jest` / `babel` inside `react-scripts` to compile React App before running `jest` unit tests.
-
-If you have found a working config that properly does it, please share it with me.
+If your unit tests with jest has some errors with @salesforce not being properly compiled, the workaround is to remap the salesforce module to an empty React Component. I can't find a reliable way to tell `jest` / `babel` inside `react-scripts` to compile React App before running `jest` unit tests.
 
 ##### Detailed Error
 
 ```
-Jest encountered an unexpected token
-
-This usually means that you are trying to import a file which Jest cannot parse, e.g. it's not plain JavaScript.
-
-By default, if Jest sees a Babel config, it will use that to transform your files, ignoring "node_modules".
-
-Here's what you can do:
- • To have some of your "node_modules" files transformed, you can specify a custom "transformIgnorePatterns" in your config.
- • If you need a custom transformation specify a "transform" option in your config.
- • If you simply want to mock your non-JS modules (e.g. binary assets) you can stub them out with the "moduleNameMapper" config option.
-
-You'll find more details and examples of these config options in the docs:
-https://jestjs.io/docs/en/configuration.html
-
-Details:
-
 <...>/node_modules/@salesforce/design-system-react/components/tabs/index.jsx:11
 import React from 'react';
 ^^^^^^
@@ -206,8 +184,6 @@ Set up your jest config to map salesforce to a dummy component stub
 ```
 module.exports = () => {};
 ```
-
-#### Option 2: using jest `--transformIgnorePatterns`
 
 ## Misc
 

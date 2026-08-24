@@ -2,8 +2,7 @@ const path = require('path');
 
 module.exports = function override(config, env) {
   config.module.rules = [
-    // salesforce dependencies
-    // this will compile salesforce lightning as src, not as package
+    // compile salesforce lightning as src, not as package
     {
       test: /\.jsx?$/,
       include: ['node_modules/@salesforce/design-system-react'].map((someDir) =>
